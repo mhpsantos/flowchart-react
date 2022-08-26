@@ -6,7 +6,11 @@
   "scripts": {
     "build": "npx rollup -c rollup.config.js"
   },
-  "keywords": ["flowchart", "react", "diagram"],
+  "keywords": [
+    "flowchart",
+    "react",
+    "diagram"
+  ],
   "peerDependencies": {
     "react": "^16.8.0 || ^17 || ^18",
     "react-dom": "^16.8.0 || ^17 || ^18",

@@ -10,9 +10,10 @@ export interface NodeData {
     };
     width?: number;
     height?: number;
+    bgColor?: string;
 }
 export interface ConnectionData {
-    type: "success" | "fail";
+    color?: string;
     source: {
         id: number;
         position: ConnectorPosition;
