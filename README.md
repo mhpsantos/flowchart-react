@@ -31,6 +31,7 @@ const App = () => {
       x: 150,
       y: 190,
       id: 1,
+      bgColor: "lightgreen",
     },
     {
       type: "end",
@@ -38,44 +39,27 @@ const App = () => {
       x: 500,
       y: 190,
       id: 2,
+      bgColor: "lightblue",
     },
     {
       x: 330,
       y: 190,
       id: 3,
-      title: "Joyce",
+      title: "Matheus",
       type: "operation",
-    },
-    {
-      x: 330,
-      y: 300,
-      id: 4,
-      title: () => {
-        return "No approver";
-      },
-      type: "operation",
+      bgColor: "lightpink",
     },
   ]);
   const [conns, setConns] = useState<ConnectionData[]>([
     {
       source: { id: 1, position: "right" },
       destination: { id: 3, position: "left" },
-      type: "success",
+      color: "purple",
     },
     {
       source: { id: 3, position: "right" },
       destination: { id: 2, position: "left" },
-      type: "success",
-    },
-    {
-      source: { id: 1, position: "bottom" },
-      destination: { id: 4, position: "left" },
-      type: "success",
-    },
-    {
-      source: { id: 4, position: "right" },
-      destination: { id: 2, position: "bottom" },
-      type: "success",
+      color: "orange",
     },
   ]);
 
@@ -119,6 +103,8 @@ Array of nodes.
 | payload | Custom data   | `{[key: string]: unknown}`              |         | false    |
 | width   | Node width    | number                                  | 120     | false    |
 | height  | Node height   | number                                  | 60      | false    |
+| bgcolor | Node background color    | string                                  | white   | false    |
+
 
 #### connections: `ConnectionData[]`
 
@@ -131,6 +117,7 @@ Connections between nodes.
 | type        | Type of connection | `success`, `fail`                                          |         | false    |
 | source      | Source info        | `{id: number, position: 'left', 'right', 'top', 'bottom'}` |         | true     |
 | destination | Destination info   | `{id: number, position: 'left', 'right', 'top', 'bottom'}` |         | true     |
+| color       | Connection color   | `Any RGB/HEX color                       `                 | black   | false     |
 
 #### readonly: `boolean | undefined`
 

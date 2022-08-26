@@ -1411,6 +1411,7 @@ function createConnection(
       position: destinationPosition,
     },
     type: "success",
+    color: "black",
   };
 }
 
@@ -1867,11 +1868,6 @@ var Node = function Node(_a) {
   });
 };
 
-var selectedConnectionColors = {
-  success: "#12640a",
-  fail: "darkred",
-  black: "black",
-};
 
 function Connection(_a) {
   var data = _a.data,
@@ -1894,27 +1890,24 @@ function Connection(_a) {
     data.source.position,
     data.destination.position
   );
-  var colors = useMemo(
-    function () {
-      return isSelected ? selectedConnectionColors : data.color;
-    },
-    [isSelected]
-  );
   return /*#__PURE__*/ jsx("g", {
     children: points.map(function (point, i) {
       if (i > points.length - 2) {
         return /*#__PURE__*/ jsx(Fragment, {});
       }
-
       var source = points[i];
       var destination = points[i + 1];
       var isLast = i === points.length - 2;
-      var color = colors[data.type];
+      var color = isSelected
+        ? "black"
+        : typeof data.color !== "undefined"
+        ? data.color
+        : "black";
       var id = "arrow".concat(color.replace("#", ""));
       return /*#__PURE__*/ jsxs(Fragment, {
         children: [
           /*#__PURE__*/ jsx("path", {
-            stroke: colors[data.type],
+            stroke: color,
             strokeWidth: 1,
             fill: "none",
             d: "M "
@@ -2068,16 +2061,15 @@ function PendingConnection(_a) {
       if (i > points.length - 2) {
         return /*#__PURE__*/ jsx(Fragment, {});
       }
-
       var source = points[i];
       var destination = points[i + 1];
       var isLast = i === points.length - 2;
-      var color = "green";
+      var color = "black";
       var id = "arrow".concat(color.replace("#", ""));
       return /*#__PURE__*/ jsxs(Fragment, {
         children: [
           /*#__PURE__*/ jsx("path", {
-            stroke: "green",
+            stroke: "black",
             strokeWidth: 1,
             fill: "none",
             d: "M "
