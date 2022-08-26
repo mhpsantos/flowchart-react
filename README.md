@@ -103,7 +103,7 @@ Array of nodes.
 | payload | Custom data   | `{[key: string]: unknown}`              |         | false    |
 | width   | Node width    | number                                  | 120     | false    |
 | height  | Node height   | number                                  | 60      | false    |
-| bgcolor | Node background color    | string                                  | white   | false    |
+| bgColor | Node background color    | string                                  | white   | false    |
 
 
 #### connections: `ConnectionData[]`

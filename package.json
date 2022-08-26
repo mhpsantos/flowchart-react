@@ -1,6 +1,6 @@
 {
-  "name": "flowchart-react",
-  "version": "3.6.3",
+  "name": "@mhpsantos/colored-flowchart-react",
+  "version": "3.6.4",
   "main": "./dist",
   "license": "MIT",
   "scripts": {
